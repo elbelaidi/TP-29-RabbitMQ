@@ -1,0 +1,50 @@
+# RabbitMQ TP29 Configuration
+# All configuration settings for the application
+
+# RabbitMQ Connection Settings
+rabbitmq:
+  host: "localhost"
+  port: 5672
+  username: "guest"
+  password: "guest"
+  virtual_host: "/"
+  
+# Management Plugin (HTTP API)
+management:
+  host: "localhost"
+  port: 15672
+  
+# Queue Names
+queues:
+  hello: "tp29.hello.queue"
+  work: "tp29.work.queue"
+  task: "tp29.task.queue"
+  notification: "tp29.notification.queue"
+  dead_letter: "tp29.dead.letter.queue"
+  
+# Exchange Names
+exchanges:
+  direct: "tp29.direct.exchange"
+  fanout: "tp29.fanout.exchange"
+  topic: "tp29.topic.exchange"
+  headers: "tp29.headers.exchange"
+  
+# Routing Keys
+routing_keys:
+  info: "tp29.info"
+  warning: "tp29.warning"
+  error: "tp29.error"
+  task_completed: "tp29.task.completed"
+  notification: "tp29.notification"
+
+# Application Settings
+app:
+  host: "0.0.0.0"
+  port: 8080
+  name: "RabbitMQ TP29"
+  
+# Message Settings
+message:
+  default_ttl: 3600000  # 1 hour in milliseconds
+  persistent: true
+
